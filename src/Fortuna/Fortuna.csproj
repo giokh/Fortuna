@@ -3,7 +3,7 @@
     <Description>A Fortuna implementation for .NET</Description>
     <Copyright>Chris Smith 2019</Copyright>
     <AssemblyTitle>Fortuna.NET</AssemblyTitle>
-    <TargetFrameworks>netstandard1.3;netstandard2.0;net46;net471</TargetFrameworks>
+    <TargetFrameworks>netstandard1.3;netstandard2.0;</TargetFrameworks>
     <AssemblyName>Fortuna</AssemblyName>
     <PackageId>Fortuna</PackageId>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
