@@ -11,13 +11,13 @@ namespace Fortuna
 	{
 		private static readonly TimeSpan OneHundredMilliseconds = TimeSpan.FromMilliseconds(100);
 
-		private readonly IGenerator _generator;
+		private readonly GeneratorBase _generator;
 		private readonly IEntropyAccumulator _accumulator;
 
 		private DateTime _lastReseedTime = DateTime.MinValue;
 		private int _reseedCount;
 
-		public PRNGFortunaProvider(IGenerator generator, IEntropyAccumulator accumulator)
+		internal PRNGFortunaProvider(GeneratorBase generator, IEntropyAccumulator accumulator)
 		{
 			if (generator == null) throw new ArgumentNullException(nameof(generator));
 			if (accumulator == null) throw new ArgumentNullException(nameof(accumulator));
@@ -73,7 +73,7 @@ namespace Fortuna
 			Reseed(seed);
 		}
 
-		private void Reseed(byte[] seed)
+		internal void Reseed(byte[] seed)
 		{
 			_reseedCount++;
 			_generator.Reseed(seed);

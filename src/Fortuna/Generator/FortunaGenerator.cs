@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 
 namespace Fortuna.Generator
 {
-	public class FortunaGenerator : IGenerator
+	internal class FortunaGenerator : GeneratorBase
 	{
 		/// <summary>
 		/// 256-bit block cipher key size (in bytes)
@@ -32,7 +32,7 @@ namespace Fortuna.Generator
 			Reseed(seed);
 		}
 
-		public void Reseed(byte[] seed)
+		internal override void Reseed(byte[] seed)
 		{
 			using (var sha = SHA256.Create())
 			{
@@ -81,7 +81,7 @@ namespace Fortuna.Generator
 		}
 
 		// AKA PseudoRandomData
-		public void GenerateBytes(byte[] data)
+		internal override void GenerateBytes(byte[] data)
 		{
 			const int maxLength = 1048576; // 2^20
 
